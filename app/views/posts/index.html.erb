@@ -1,0 +1,15 @@
+<div class="container w-75 my-5">
+  <ul class="list-unstyled">
+
+    <% @posts.each do |post| %>
+      <li class="border p-3">
+        <%= link_to posts_path(post['id']) do %>
+          <h5 class="text-decoration-none"><%= post['title'] %></h5>
+        <% end %>
+        <a href="<%= post['url'] %>" target="#"><%= post['url'] %></a>
+        <p><%= post['score'] %> | By: <%= post['by'] %></p>
+      </li>
+    <% end %>
+
+  </ul>
+</div>
